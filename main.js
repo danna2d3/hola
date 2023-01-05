@@ -2,14 +2,17 @@ const menuEmail = document.querySelector ('.navbar-email');
 const desktopMenu = document.querySelector ('.desktop-menu')
 const menuHamIcon = document.querySelector ('.menu');
 const menuCarritoIcon = document.querySelector ('.navbar-shopping-cart');
+const productDetailCloseIcon = document.querySelector('.product-detail-close');
 const mobileMenu = document.querySelector ('.mobile-menu');
-const aside = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
+const productDetailContainer = document.querySelector('#productDetail');
 
 
 menuEmail.addEventListener('click', toogleDesktopMenu);
 menuHamIcon.addEventListener('click', toogleMobileMenu);
-menuCarritoIcon.addEventListener('click', toogleCarritoAside);
+menuCarritoIcon.addEventListener('click', toogleCarritoshoppingCartContainer);
+productDetailCloseIcon.addEventListener('click',closeProductDetailAside);
 
 function toogleDesktopMenu () {
     console.log ('Click')
@@ -17,22 +20,37 @@ function toogleDesktopMenu () {
 }
 
 function toogleMobileMenu () {
-    const isAsideClosed = aside.classList.contains ('inactive');  
-    if (!isAsideClosed) {
-        aside.classList.add('inactive');
+    const isshoppingCartContainerClosed = shoppingCartContainer.classList.contains ('inactive');  
+    if (!isshoppingCartContainerClosed) {
+        shoppingCartContainer.classList.add('inactive');
         }
-
+    closeProductDetailAside();
+    
     mobileMenu.classList.toggle('inactive');
 }
 
-function toogleCarritoAside () {
+function toogleCarritoshoppingCartContainer () {
     const ismobileMenuClosed = mobileMenu.classList.contains ('inactive');
-    //const isAsideClosed = aside.classList.contains ('inactive');
+    //const isshoppingCartContainerClosed = shoppingCartContainer.classList.contains ('inactive');
     if (!ismobileMenuClosed) {
     mobileMenu.classList.add('inactive');
     }
 
-    aside.classList.toggle ('inactive');
+    const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
+    if (!isProductDetailClosed) {
+        productDetail.classList.add('inactive');
+    }
+    shoppingCartContainer.classList.toggle ('inactive');
+}
+
+
+function openProductDetailAside () {
+    shoppingCartContainer.classList.add('inactive');
+    productDetailContainer.classList.remove('inactive');
+}
+
+function closeProductDetailAside () {
+    productDetailContainer.classList.add('inactive')
 }
 
 const productList = [] ;
@@ -47,12 +65,12 @@ productList.push({
     image: 'https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/7d/46/66/7d4666f3-1dec-c3ae-e81c-1efef0ae5d6b/00602508870033_Cover.jpg/1200x1200bf-60.jpg',
 });
 productList.push({
-    name: 'TWICEcoaster:Lane 1',
+    name: 'TWICEcoaster: Lane 1',
     price: 'TT',
     image: 'https://0.soompi.io/wp-content/uploads/sites/8/2016/12/05225255/TWICE_-_TWICEcoaster_-_LANE_1.jpg?s=900x600&e=t',
 });
 productList.push({
-    name: 'TWICEcoaster:Lane 2',
+    name: 'TWICEcoaster: Lane 2',
     price: 'knock Knock',
     image: 'https://lh3.googleusercontent.com/D3wwDqmMGwm7-x-xMEgmuI3wusNGY0R_1lH9dvZkZj01yfphXaJsySNEmeSenKgef586iRlvyLxeMa8=w544-h544-l90-rj',
 });
@@ -135,9 +153,11 @@ productList.push({
 for (product of productList) {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
- //
+ // product=name, price, image
     const productImg = document.createElement ('img');
     productImg.setAttribute('src', product.image);
+    productImg.addEventListener('click', openProductDetailAside);
+
     
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
@@ -165,8 +185,4 @@ for (product of productList) {
     productCard.appendChild(productInfo);
 
     cardsContainer.appendChild(productCard);
-
-
-
-
 }

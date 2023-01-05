@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
     <title>Twicetagram</title>
 
@@ -47,7 +46,7 @@
                 <li
                 class="navbar-email">zyozyo@twicetagram.com</li>
                 <li class="navbar-shopping-cart">
-                    <img src="./jyp-entertainment-logo-6C494A92E0-seeklogo.com.png" alt="shopping-cart" class="shopping-cart">
+                    <img src="./MovelyTransparent.webp" alt="shopping-cart" class="shopping-cart">
                     <div></div>   
                 </li>         
             </ul>
@@ -100,6 +99,10 @@
                 <li>
                     <a href="/">Twicetagram</a>
                 </li>
+
+                <li>
+                    <a href="/">Japanese</a>
+                </li>
             </ul>
             <ul>
                 <li>
@@ -124,9 +127,9 @@
             </ul>
         </div>
     </nav>    
-    <aside class="product-detail inactive">
+    <aside id="shoppingCartContainer" class="inactive">
         <div class="title-container">
-            <img src="./MovelyTransparent.webp" alt="arrow" class="lovely">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png" alt="arrow" class="lovely">
             <p class="title">TWICETAGRAM</p>
         </div>
         <div class="twice-content">
@@ -169,6 +172,31 @@
         </button>
     </aside> 
 
+    <aside id="productDetail" class="inactive">
+        <div class="product-detail-close">
+            <img src="./close.png" alt="close" class="close">
+        </div>
+        
+        <img src="./signal.jpg" alt="signal" class="signal">
+   
+        <div class="product-info">
+        <p>SIGNAL</p>
+        <p>4th Mini Album</p>
+        <P>*Album Tracks:</P>
+            <P>1.SIGNAL</P>
+            <P> 2.하루에 세번</P>
+            <P> 3.ONLY 너</P>
+            <P>4.HOLD ME TIGHT</P>
+            <P> 5.EYE EYE EYES</P>
+            <P>6.SOMEONE LIKE ME</P>
+        
+        <button class="primary-button play-button">
+        <img src="./149125.png" alt="play" class="play">
+        Play
+        </button>
+    </div> 
+    </aside> 
+    
     <section class="main-container">
         <div class="cards-container">
 
@@ -188,6 +216,7 @@
         </div>
     </section>
     <script src="./main.js"></script>
+
     
 </body>
 </html>
