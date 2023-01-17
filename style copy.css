@@ -5,7 +5,6 @@
     --tw4:#fe7ba3;
     --tw5:#ff5fa2;
     --bak:#ecd7cb;
-    --tab:#f7eaea;
     --sm: 14px;
     --md: 16px;	
     --lg: 18px;
@@ -19,39 +18,16 @@ body {
 background: var(--bak);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 24px 5px;
-    border-bottom: 3px solid var(--tw3);
-    }
-    
 /*desktop*/
 .inactive {
     display: none;
 }
-
-.darken
-  {
-      width: 100%;
-      height: calc(100%);
-      position: fixed;
-      top: 0;
-      background-color: rgba(255, 130, 172, 0.5);
-  }
-
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-    background-color: var(--tw2);
+nav {
+display: flex;
+justify-content: space-between;
+padding: 0 24px;
+border-bottom: 3px solid var(--tw3);
 }
-
-::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    background-color: var(--tw3);
-    border: 2px solid var(--tw4);
-}
-
 .menu {
 display: none;
 }
@@ -60,6 +36,9 @@ width:70px ;
 }
 .logo {
 width: 70px;
+}
+.logo:hover {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=93682), pointer;
 }
 .shopping-cart {
 width: 50px;
@@ -276,7 +255,7 @@ bottom: 0;
         font-weight: bold;
         color: var(--tw3);
     }
-    .product-info-aside {
+    #productDetail .product-info {
         margin: 5px 24px 0 24px;
     }
 
@@ -353,36 +332,36 @@ bottom: 0;
     align-items: center;
     justify-content: center;
     }
-.product-info-aside {
+#productDetail .product-info {
         margin: 5px 24px 0 24px;
     }
-.product-info-aside p:nth-child(1) {
+#productDetail .product-info p:nth-child(1) {
         color: var(--tw5);
         font-weight: bold;
         font-size: var(--md);
         margin-top: 0;
         margin-bottom: 4px;
     }
-.product-info-aside p:nth-child(2) {
+#productDetail .product-info p:nth-child(2) {
         color: var(--tw4);
         font-weight: bold;
         font-size: var(--sm);
         margin-top: 0;
         margin-bottom: 16px;
     }
-.product-info-aside p:nth-child(3) {
+#productDetail .product-info p:nth-child(3) {
         color: var(--tw3);
         font-weight: bold;
         font-size: var(--sm);
         margin-top: 0;
         margin-bottom: 10px;
     }
-.product-info-aside p:nth-child(4),
-.product-info-aside p:nth-child(5),
-.product-info-aside p:nth-child(6),
-.product-info-aside p:nth-child(7),
-.product-info-aside p:nth-child(8),
-.product-info-aside p:nth-child(9) {
+#productDetail .product-info p:nth-child(4),
+#productDetail .product-info p:nth-child(5),
+#productDetail .product-info p:nth-child(6),
+#productDetail .product-info p:nth-child(7),
+#productDetail .product-info p:nth-child(8),
+#productDetail .product-info p:nth-child(9) {
         color: var(--tw2);
         font-weight: bold;
         font-size: var(--sm);
@@ -420,7 +399,7 @@ bottom: 0;
         cursor: url(http://www.rw-designer.com/cursor-extern.php?id=93682), pointer;
         
     }
-    .product-info-aside > img:nth-child(2) {
+    #productDetail .product-info > img:nth-child(2) {
         width: 100%;
         height: 360px;
         object-fit: cover;
@@ -432,7 +411,7 @@ bottom: 0;
 /* ALBUMES*/
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,240px);
+    grid-template-columns: repeat(auto-fit,140px);
     gap: 26px;
     place-content: center;
     margin-top: 20px;
@@ -443,8 +422,8 @@ bottom: 0;
     
 }
 .product-card img {
-    width: 240px;
-    height: 240px;
+    width: 140px;
+    height: 140px;
     border-radius: 20px;
     object-fit: cover;
     
@@ -458,6 +437,7 @@ bottom: 0;
 .product-card .product-info figure img {
     width: 35px;
     height: 35px; 
+
     }
 .product-card .product-info figure img:hover {
 background-color: var(--tw4);
@@ -476,32 +456,7 @@ background-color: var(--tw4);
 }
 
 
-
-.infobox {
-    color: var(--tw5);
-    margin-left:500px;
-    width: 80px;
-    border-collapse: collapse;
-    
-}
-table {
-    width: 700px;
-    display: table;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: var(--tw4);
-}
-
- th, td {
-    width: 25%;
-    text-align: left;
-    vertical-align: top;
-    border: 1px solid var(--tw5);
-    background-color: var(--tab);
-
- }
-
+  
 
 @media (max-width: 640px ) {
 .cards-container {
@@ -530,13 +485,6 @@ table {
 }
 .desktop-menu {
     display: none;
-}
-.infobox {
-    width: 300px;
-    margin-left:100px;
-}
-table {
- width:300px;
 }
 
 aside {

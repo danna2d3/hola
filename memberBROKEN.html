@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root {
+            --tw1:#fccfa6;
+            --tw2:#fdb3a5;
+            --tw3:#fe97a4;
+            --tw4:#fe7ba3;
+            --tw5:#ff5fa2;
+            --bak:#ecdcd3;
+            --sm: 14px;
+            --md: 16px;	
+            --lg: 18px;
+        }
+        body {
+            margin: 0;
+            font-family: 'Fuzzy Bubbles', cursive;            
+        }
+    * {
+    background: var(--bak)
+    }
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,240px);
+        gap: 26px;
+        place-content: center;
+        padding-top: 20px;
+    }
+    .product-card {
+        width: 240px;
+    }
+    .product-card img {
+        width: 150px;
+        height: 200px;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    .product-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+    }
+    /*.product-info figure img {
+        width: 35px;
+        height: 35px; 
+        }*/
+    .product-info div p:nth-child(1){
+        font-weight: bold;
+        font-size: var(--md);
+        margin-top: 0px;
+        margin-bottom: 4px;
+    }
+    .product-info div p:nth-child(2){
+        font-size: var(--sm);
+        margin-top: 0;
+        margin-bottom: 0;
+        color: var(--tw5);
+    }
+    @media (max-width: 640px ) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fit,140px);
+        }
+        .product-card {
+        width: 140px;
+        }
+        .product-card img {
+        width: 140px;
+        height: 140px;
+        }
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 24px;
+        border-bottom: 1px solid var(--tw2);
+    }
+    .menu {
+        display: none;
+    }
+    .menu {
+        width:70px ;
+    }
+    .logo {
+        width: 70px;
+    }
+    .shopping-cart {
+        width: 20px;
+    }
+    .navbar-left ul, 
+    .navbar-right ul {
+        list-style: none;
+        padding: 0;
+        margin: 8px;
+        display: flex;
+        align-items: center;
+        height: 60px;
+    }
+    .navbar-left {
+        display: flex;
+    }
+    .navbar-left ul {
+        margin: 8px;    
+    }
+    .navbar-left ul li a, 
+    .navbar-left ul li a {
+        text-decoration: none;
+        color: var(--tw3);
+        border: 1px solid var(--bak);
+        padding:8px;
+        border-radius: 8px;
+    }
+    .navbar-left ul li a:hover, 
+    .navbar-left ul li a:hover {
+        border: 1px solid var(--tw5);
+        color: var(--tw5);
+    }
+    .navbar-email {
+        color: var(--tw3);
+        font-size: var(--sm);
+        margin-right: 12px;
+    }
+    --.navbar-shopping-cart {
+        position: relative;
+    }
+    --.navbar-shopping-cart div {
+        width: 15px;
+        height: 15px;
+        background-color: var(--tw3);
+        border-radius: 50%;
+        font-size: var(--sm);
+        font-weight: bold;
+        position: absolute;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+    }  
+
+    @media (max-width: 640px) {
+        .menu {
+            display: block;
+        }
+        .navbar-left ul {
+            display: none;
+        }
+        .navbar-email {
+            display: none;
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="./Menu_icon_icon-icons.com_71858.png" alt="menu" class="menu">
+
+        <div class="navbar-left">
+            
+            <img src="./Logo_of_TWICE.svg.png" alt="logo" class="logo">        
+            <ul>
+                <li>
+                    <a href="./member.html">Members</a>
+                </li>
+
+                <li>
+                    <a href="https://es.wikipedia.org/wiki/Anexo:Premios_y_nominaciones_de_Twice">wins</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCzgxx_DM2Dcb9Y1spb9mUJA">Youtube</a>
+                </li>
+                <li>
+                    <a href="https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0">Spotify</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/twicetagram/?next=%2F">Insta</a>
+                </li>
+                <li>
+                    <a href="https://www.noraemagazine.com/wp-content/uploads/2020/05/TWICE-LOVELY-PERSONAJES.jpg">Lovely</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <ul>
+                <li
+                class="navbar-email">zyozyo@twicetagram.com</li>
+                <li class="navbar-shopping-cart">
+                    <img src="./MovelyTransparent.webp" alt="shopping-cart" class="shopping-cart">
+                    <div></div>   
+                </li>         
+            </ul>
+        </div>
+
+        <div class="desktop-menu inactive">
+            <ul>
+                <li>
+                    <a href="/" class="title">My songs</a>
+                </li>
+    
+                <li>
+                    <a href="/">My account</a>
+                </li>
+    
+                <li>
+                    <a href="/">sign out</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mobile-menu inactive">
+            <ul>
+                <li>
+                    <a href="/" class="titulo" >-*-</a>
+                </li>
+            
+                <li>
+                    <a href="/">Korean</a>
+                </li>
+    
+                <li>
+                    <a href="/">Japanese</a>
+                </li>
+          
+                <li>
+                    <a href="/">English
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/">Members
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/">Spotify</a>
+                </li>
+           
+                <li>
+                    <a href="/">Youtube</a>
+                </li>
+
+                <li>
+                    <a href="/">Insta</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="/">My songs
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/">My account
+                    </a>
+                </li>
+            </ul>
+    
+            <ul>
+                <li>
+                    <a href="/" class="email">zyozyo@twicetagram.com</a>
+                </li>
+            
+                <li>
+                    <a href="/" class="sign-out" >SIGN OUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>     
+    <section class="main-container">
+        <div class="cards-container">
+            <div class="product-card">
+                <img src="https://www.k-popmag.com/content/images/size/w1000/2022/09/45550214-5114-4C5B-BBD3-480903A47898.jpeg" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Nayeon</p>
+                    <p>Im Nayeon</p>
+                    </div>
+        
+
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://www.k-popmag.com/content/images/size/w1000/2022/09/5B048170-3FA3-4A71-A652-94E0BBCA820C.jpeg" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Jeongyeon</p>
+                    <p>Yoo Jeongyeon</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://0.soompi.io/wp-content/uploads/2022/08/16081058/Momo.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Momo</p>
+                    <p>Cheer Up</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://www.allkpop.com/upload/2022/08/content/171119/1660749550-image.png" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Sana</p>
+                    <p>Minatosaki Sana</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://www.allkpop.com/upload/2022/08/content/171118/1660749536-image.png" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Jihyo</p>
+                    <p>Park Jihyo</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://www.allkpop.com/upload/2022/08/content/171119/1660749582-image.png" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Mina</p>
+                    <p>Cheer Up</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://www.allkpop.com/upload/2022/08/content/171119/1660749591-image.png" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Dahyun</p>
+                    <p>Kim Dahyun</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://www.allkpop.com/upload/2022/08/content/171119/1660749561-image.png" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Chaeyoung</p>
+                    <p>Cheer Up</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="product-card">
+                <img src="https://www.allkpop.com/upload/2022/08/content/171119/1660749571-image.png" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>Tzuyu</p>
+                    <p>Choi Tzuyu</p>
+                    </div>
+                    
+                </div>
+    
+            </div>
+
+            </div>
+
+        </div>
+    </section>
+    
+</body>
+</html>
